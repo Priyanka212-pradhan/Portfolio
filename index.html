@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Portfolio</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="left">
+      <a href="/">Priyanka Pradhan</a>
+    </div>
+
+    <div class="right">
+      <a href="https://github.com/" target="_blank" rel="noopener no-referrer">
+        <i class="fa-brands fa-github"></i>
+        <span>Github</span>
+      </a>
+
+      <a href="https://linkedin.com/" target="_blank" rel="noopener no-referrer">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>Linkedin</span>
+      </a>
+
+      <a href="mailto:priyankapradhan212@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero section -->
+    <section class="hero-section">
+      <div class="text">
+        <h2>Hi I am Priyanka</h2>
+        <p>
+          I'm a passionate front-end developer who loves crafting clean and interactive user experiences. I specialize in turning designs into fully functional websites using modern web technologies.
+        </p>
+        <div class="links">
+          <a href="#skills">
+            <i class="fa-solid fa-code"></i>
+            <span>Skills</span>
+          </a>
+          <a href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+      <div class="headshot">
+        <img src="images/hero-headshot.jpg" alt="priyanka pradhan" />
+      </div>
+    </section>
+
+    <!-- Skill section -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="text">
+        Below are some of the core technologies and tools I use to build responsive, efficient, and user-friendly web applications.
+      </div>
+
+      <div class="cells">
+        <div class="cell">
+          <img src="images/html-logo.webp" alt="html logo" />
+          <span>HTML</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/css-logo.webp" alt="css logo" />
+          <span>CSS</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/javascript-logo.webp" alt="javascript logo" />
+          <span>Javascript</span>
+        </div>
+
+        <div class="cell">
+          <img src="images/react-logo.webp" alt="react logo" />
+          <span>React</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+      <div class="group">
+        <div class="text">
+          Have a project in mind or just want to say hello? Feel free to reach out using the form — I’ll get back to you as soon as possible!
+        </div>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+
+          <label for="message">Message</label>
+          <textarea id="message" cols="30" rows="10"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
