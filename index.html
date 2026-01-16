@@ -4,42 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Priyanka Pradhan | Software Engineer</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Quicksand:wght@300..700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
 
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-  <title>Portfolio</title>
 </head>
+
 <body>
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <nav>
     <div class="left">
       <a href="/">Priyanka Pradhan</a>
     </div>
 
     <div class="right">
-      <a href="https://github.com/" target="_blank" rel="noopener no-referrer">
+      <a href="https://github.com/Priyanka212-pradhan" target="_blank">
         <i class="fa-brands fa-github"></i>
-        <span>Github</span>
+        <span>GitHub</span>
       </a>
-
-      <a href="https://linkedin.com/" target="_blank" rel="noopener no-referrer">
+      <a href="https://www.linkedin.com/in/priyanka--pradhan/" target="_blank">
         <i class="fa-brands fa-linkedin"></i>
-        <span>Linkedin</span>
+        <span>LinkedIn</span>
       </a>
-
       <a href="mailto:priyankapradhan212@gmail.com">
         <i class="fa-solid fa-envelope"></i>
         <span>Email</span>
@@ -48,80 +48,182 @@
   </nav>
 
   <main>
-    <!-- Hero section -->
-    <section class="hero-section">
-      <div class="text">
-        <h2>Hi I am Priyanka</h2>
-        <p>
-          I'm a passionate front-end developer who loves crafting clean and interactive user experiences. I specialize in turning designs into fully functional websites using modern web technologies.
-        </p>
-        <div class="links">
-          <a href="#skills">
-            <i class="fa-solid fa-code"></i>
-            <span>Skills</span>
-          </a>
-          <a href="#contact">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contact</span>
-          </a>
-        </div>
-      </div>
-      <div class="headshot">
-        <img src="images/hero-headshot.jpg" alt="priyanka pradhan" />
-      </div>
-    </section>
+  <!-- HERO + ABOUT -->
+<section class="hero-about-section">
 
-    <!-- Skill section -->
+  <!-- LEFT: IMAGE + HERO CONTENT -->
+  <div class="hero-left">
+    <div class="headshot">
+      <img src="images/hero-headshot.jpg" alt="Priyanka Pradhan" />
+    </div>
+
+    <div class="hero-text">
+      <h2>Hi, I'm Priyanka 👋</h2>
+      <h3>Curious mind. Problem solver. Always learning.</h3>
+
+      <div class="links">
+        <a href="#contact" class="primary-btn">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+        <a href="Priyanka-Pradhan-CV.pdf" download class="secondary-btn">
+          <i class="fa-solid fa-download"></i>
+          <span>Download CV</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: ABOUT ME -->
+  <div class="about-right">
+    <h2>About Me</h2>
+    <p>
+      Experienced in software development, IT operations, data engineering, and Project Management, 
+      I enjoy designing systems that are efficient, scalable, and maintainable. I take pride in delivering 
+      high-quality solutions that solve complex problems.
+    </p>
+    <p>
+      I have over 2 years of professional experience developing and maintaining 
+      SaaS-based applications, backend systems, RESTful APIs, unit testing, and deployments. 
+      At Hitachi Energy, I worked on the ETRM Tracker (Energy Trading and Risk Management),
+      contributing to core functionalities such as report generation, workflows, import/export 
+      methods data tracking, and analytics within ADHIA framework. I optimized SQL queries, designed 
+      and integrated RESTful APIs, and collaborated closely with QA and development teams to 
+      deliver reliable, scalable, and efficient solutions. I enjoy building reliable solutions that scale and make an impact.
+    </p>
+    <p>
+      Alongside professional work, I am pursuing a Master’s degree in Information Technology at 
+      and hold a certification in Data Science and Machine Learning in Python, which strengthens 
+      my ability to handle data-intensive applications and backend systems.
+    </p>
+  </div>
+
+</section>
+
+    <!-- SKILLS -->
     <section id="skills" class="skills-section">
       <h2>Skills</h2>
-      <div class="text">
-        Below are some of the core technologies and tools I use to build responsive, efficient, and user-friendly web applications.
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Programming</h4>
+          <p>PHP, Laravel, Python, SQL, JavaScript, HTML, CSS</p>
+        </div>
+
+        <div class="skill-card">
+          <h4>Data & Analytics</h4>
+          <p>Pandas, NumPy, ETL, Data Visualization</p>
+        </div>
+
+        <div class="skill-card">
+          <h4>Tools & Platforms</h4>
+          <p>Azure, Git, GitHub, Postman</p>
+        </div>
+
+        <div class="skill-card">
+          <h4>Practices</h4>
+          <p>SaaS Applications, Agile Methodologies, Unit Testing</p>
+        </div>
+
+        <div class="skill-card">
+          <h4>Collaboration</h4>
+          <p>Jira, Confluence, SharePoint</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience-section">
+      <h2>Experience</h2>
+
+      <div class="job">
+        <h3>Software Engineer – Hitachi Energy</h3>
+        <span>February 2023 – July 2024</span>
+        <ul>
+          <li>Maintained SaaS-based TRM Tracker modules using PHP and JavaScript.</li>
+          <li>Optimized complex SQL queries for large datasets.</li>
+          <li>Designed and integrated RESTful APIs.</li>
+          <li>Used Git and Azure DevOps pipelines for deployments.</li>
+          <li>Worked in Agile and SCRUM teams.</li>
+        </ul>
       </div>
 
-      <div class="cells">
-        <div class="cell">
-          <img src="images/html-logo.webp" alt="html logo" />
-          <span>HTML</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/css-logo.webp" alt="css logo" />
-          <span>CSS</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/javascript-logo.webp" alt="javascript logo" />
-          <span>Javascript</span>
-        </div>
-
-        <div class="cell">
-          <img src="images/react-logo.webp" alt="react logo" />
-          <span>React</span>
-        </div>
+      <div class="job">
+        <h3>Backend Developer Intern – Afford IT</h3>
+        <span>June 2025 – August 2025</span>
+        <ul>
+          <li>Developed backend services using Laravel.</li>
+          <li>Created RESTful APIs for web and mobile applications.</li>
+          <li>Integrated frontend using Bootstrap and React.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
-        <h2>Contact</h2>
-      <div class="group">
-        <div class="text">
-          Have a project in mind or just want to say hello? Feel free to reach out using the form — I’ll get back to you as soon as possible!
+    <!-- EDUCATION -->
+    <section class="education-section">
+      <h2>Education & Certifications</h2>
+      <ul>
+        <li>
+          <strong>Master of Information Technology</strong><br />
+          Auckland Institute of Studies (2024 – 2026)
+        </li>
+        <li>
+          <strong>Bachelor of Information Management</strong><br />
+          Tribhuvan University (2018 – 2023)
+        </li>
+        <li>
+          <strong>Data Science & Machine Learning in Python</strong><br />
+          Deerwalk Training Center (2022)
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-section">
+      <h2>Projects</h2>
+
+      <div class="projects-slider">
+        <div class="project-card">
+          <h3>Payroll Management System</h3>
+          <p>
+            Developed a basic Payroll Management System using Laravel and MySQL.
+            The system allows companies to manage employee salaries, track attendance,
+            and generate monthly payslips efficiently. It includes backend RESTful APIs,
+            secure user authentication, and optimized SQL queries.
+          </p>
+          <a href="https://github.com/Priyanka212-pradhan" class="primary-btn" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
+          </a>
         </div>
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name" />
 
-          <label for="email">Email</label>
-          <input type="text" id="email" />
+        <div class="project-card">
+          <h3>Blog Application (User & Admin)</h3>
+          <p>
+            Developed a full-featured Blog Application with user and admin interfaces
+            using Laravel and MySQL. Users can create, edit, and comment on posts,
+            while admins can manage content, moderate comments, and handle user roles.
+            The project demonstrates CRUD operations, authentication, and role-based access.
+          </p>
+          <a href="https://github.com/Priyanka212-pradhan" class="primary-btn" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
+          </a>
+        </div>
 
-          <label for="message">Message</label>
-          <textarea id="message" cols="30" rows="10"></textarea>
+        <!-- Add more project cards here -->
+      </div>
 
-          <button type="submit">Send Message</button>
-        </form>
+      <!-- Slider Controls -->
+      <div class="slider-controls">
+        <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </section>
+
+
   </main>
+
+  <footer>
+    © 2026 Priyanka Pradhan | Software Engineer
+  </footer>
 </body>
 </html>
