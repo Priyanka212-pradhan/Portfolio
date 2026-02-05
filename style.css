@@ -160,6 +160,16 @@ section h2 {
   transform: translateY(-6px);
 }
 
+.contact-options {
+  display: none;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.contact-options.show {
+  display: flex;
+}
+
 /* EXPERIENCE */
 .job {
   background: var(--card-bg);

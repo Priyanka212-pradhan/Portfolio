@@ -62,15 +62,31 @@
       <h3>Curious mind. Problem solver. Always learning.</h3>
 
       <div class="links">
-        <a href="#contact" class="primary-btn">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Contact</span>
-        </a>
-        <a href="Priyanka-Pradhan-CV.pdf" download class="secondary-btn">
-          <i class="fa-solid fa-download"></i>
-          <span>Download CV</span>
-        </a>
-      </div>
+  <div class="contact-wrapper">
+    <button class="primary-btn" id="contactBtn">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Contact</span>
+    </button>
+
+    <div class="contact-options" id="contactOptions">
+      <a href="tel:+640226015694" class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>+64 022 601 5694</span>
+      </a>
+
+      <a href="mailto:priyankapradhan212@gmail.com" class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email Me</span>
+      </a>
+    </div>
+  </div>
+
+  <a href="Priyanka-Pradhan-CV.pdf" download class="secondary-btn">
+    <i class="fa-solid fa-download"></i>
+    <span>Download CV</span>
+  </a>
+</div>
+
     </div>
   </div>
 
@@ -78,23 +94,35 @@
   <div class="about-right">
     <h2>About Me</h2>
     <p>
-      Experienced in software development, IT operations, data engineering, and Project Management, 
-      I enjoy designing systems that are efficient, scalable, and maintainable. I take pride in delivering 
-      high-quality solutions that solve complex problems.
+       I am a Software Engineer with experience building and supporting
+       SaaS-based applications. I enjoy working on practical, real-world systems and
+       contributing to solutions that are reliable, scalable, and easy to maintain.
     </p>
     <p>
       I have over 2 years of professional experience developing and maintaining 
       SaaS-based applications, backend systems, RESTful APIs, unit testing, and deployments. 
-      At Hitachi Energy, I worked on the ETRM Tracker (Energy Trading and Risk Management),
+      At Hitachi Energy, I worked on the CTRM and ETRM Tracker (Energy Trading and Risk Management),
       contributing to core functionalities such as report generation, workflows, import/export 
       methods data tracking, and analytics within ADHIA framework. I optimized SQL queries, designed 
       and integrated RESTful APIs, and collaborated closely with QA and development teams to 
       deliver reliable, scalable, and efficient solutions. I enjoy building reliable solutions that scale and make an impact.
     </p>
     <p>
+      More recently, I completed a Backend Developer internship in New Zealand, where I
+    worked with Laravel to develop backend services and RESTful APIs, gaining hands-on
+    experience in building features for real-world applications and collaborating with
+    cross-functional teams in a local development environment.
+    </p>
+    <p>
       Alongside professional work, I am pursuing a Master’s degree in Information Technology at 
       and hold a certification in Data Science and Machine Learning in Python, which strengthens 
       my ability to handle data-intensive applications and backend systems.
+    </p>
+    <p>
+      With a strong foundation in backend development and SaaS-based systems, I am keen to
+      grow my career across software development, data engineering, IT operations, and
+      project-oriented roles. I enjoy learning new technologies and applying them to build
+      efficient, maintainable systems.
     </p>
   </div>
 
@@ -137,7 +165,7 @@
       <h2>Experience</h2>
 
       <div class="job">
-        <h3>Software Engineer – Hitachi Energy</h3>
+        <h3>Software Engineer – Hitachi Energy (Kathmandu, Nepal)</h3>
         <span>February 2023 – July 2024</span>
         <ul>
           <li>Maintained SaaS-based TRM Tracker modules using PHP and JavaScript.</li>
@@ -149,7 +177,7 @@
       </div>
 
       <div class="job">
-        <h3>Backend Developer Intern – Afford IT</h3>
+        <h3>Backend Developer Intern – Afford IT (Auckland, New Zealand)</h3>
         <span>June 2025 – August 2025</span>
         <ul>
           <li>Developed backend services using Laravel.</li>
@@ -225,5 +253,17 @@
   <footer>
     © 2026 Priyanka Pradhan | Software Engineer
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const contactBtn = document.getElementById("contactBtn");
+    const contactOptions = document.getElementById("contactOptions");
+
+    contactBtn.addEventListener("click", () => {
+      contactOptions.classList.toggle("show");
+    });
+  });
+</script>
+
 </body>
 </html>
