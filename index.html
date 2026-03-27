@@ -3,267 +3,1265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Priyanka Pradhan | Software Engineer</title>
-
-  <!-- Google Fonts -->
+  <title>Priyanka Pradhan — Data Analyst & Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  />
+    :root {
+      --bg:       #f5f0e8;
+      --bg2:      #ede8df;
+      --bg3:      #e4ddd2;
+      --card:     #ffffff;
+      --border:   rgba(0,0,0,0.08);
+      --border2:  rgba(0,0,0,0.15);
+      --text:     #1a1814;
+      --muted:    #7a7368;
+      --accent:   #2d5a27;
+      --accent2:  #c0392b;
+      --serif:    'DM Serif Display', serif;
+      --sans:     'DM Sans', sans-serif;
+      --mono:     'JetBrains Mono', monospace;
+    }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* subtle dot pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    * { position: relative; z-index: 1; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 3rem;
+      background: rgba(245,240,232,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      color: #fff !important;
+      background: var(--accent);
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+    }
+
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 72px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 3.5rem 5rem 3rem;
+      border-right: 1px solid var(--border2);
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 1.5px;
+      background: var(--accent);
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 4.5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .hero-name em { font-style: italic; color: var(--accent); }
+
+    .hero-desc {
+      font-size: 0.97rem;
+      color: var(--muted);
+      max-width: 430px;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+
+    .hero-avail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      border: 1.5px solid rgba(45,90,39,0.3);
+      background: rgba(45,90,39,0.06);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-avail::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; } 50% { opacity:0.25; }
+    }
+
+    .hero-btns { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.78rem 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.83; }
+
+    .btn-outline {
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.78rem 1.5rem;
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border2);
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* hero right */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 3rem;
+      gap: 1.25rem;
+    }
+
+    /* PHOTO — full face, not cut */
+    .hero-photo {
+      border: 1.5px solid var(--border2);
+      overflow: hidden;
+      border-radius: 4px;
+      background: var(--bg3);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-photo:hover img { transform: scale(1.03); }
+
+    .photo-caption {
+      padding: 0.6rem 1rem;
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      border-top: 1px solid var(--border);
+    }
+
+    /* stats */
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .stat-box {
+      background: var(--card);
+      padding: 1.4rem 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .stat-box:hover { background: var(--bg2); }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-lbl {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* social */
+    .social-row {
+      display: flex;
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .social-item {
+      flex: 1;
+      background: var(--card);
+      padding: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .social-item:hover { background: var(--bg2); color: var(--accent); }
+
+    /* ── SECTION COMMON ── */
+    section { border-top: 1px solid var(--border2); }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: ''; flex: 1;
+      height: 1px;
+      background: var(--border2);
+    }
+
+    /* ── ABOUT ── */
+    .about-section { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-heading em { font-style: italic; color: var(--accent); }
+
+    .about-body p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .about-body p strong { color: var(--text); font-weight: 500; }
+
+    .about-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .fact-row {
+      background: var(--card);
+      padding: 1rem 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .fact-row:hover { background: var(--bg3); }
+
+    .fact-lbl {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .fact-val {
+      font-size: 0.88rem;
+      color: var(--text);
+      text-align: right;
+    }
+
+    /* View cv */
+    /* CV MODAL */
+.cv-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-modal-content {
+  width: 85%;
+  height: 90%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+  animation: scaleIn 0.3s ease;
+}
+
+.cv-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cv-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+}
+
+/* animation */
+@keyframes scaleIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .skill-card {
+      background: var(--card);
+      padding: 1.8rem;
+      transition: background 0.2s;
+    }
+
+    .skill-card:hover { background: var(--bg2); }
+
+    .skill-card-lbl {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .skill-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      border: 1px solid var(--border2);
+      padding: 3px 10px;
+      border-radius: 2px;
+      background: var(--bg);
+      transition: all 0.2s;
+    }
+
+    .skill-card:hover .skill-tag { color: var(--text); border-color: var(--border2); }
+    .skill-tag.hi { color: var(--accent); border-color: rgba(45,90,39,0.35); background: rgba(45,90,39,0.06); }
+
+    /* ── EXPERIENCE ── */
+    .exp-section { background: var(--bg2); }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .exp-item {
+      background: var(--card);
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      transition: background 0.2s;
+    }
+
+    .exp-item:hover { background: var(--bg2); }
+
+    .exp-meta {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--border2);
+    }
+
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .exp-co {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .exp-content { padding: 2rem; }
+
+    .exp-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-stack {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+    }
+
+    .exp-bullets li::before {
+      content: '→';
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .project-card {
+      background: var(--card);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .project-card:hover { background: var(--bg2); }
+
+    .proj-num {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--border2);
+      letter-spacing: 0.1em;
+    }
+
+    .proj-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    .proj-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+
+    .proj-tech { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .proj-tech span {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--accent);
+      border: 1px solid rgba(45,90,39,0.3);
+      background: rgba(45,90,39,0.06);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .proj-link {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+
+    .proj-link:hover { text-decoration: underline; }
+
+    /* ── EDUCATION ── */
+    .edu-section { background: var(--bg2); }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .edu-card {
+      background: var(--card);
+      padding: 2rem;
+      transition: background 0.2s;
+    }
+
+    .edu-card:hover { background: var(--bg2); }
+
+    .edu-type {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.85rem;
+    }
+
+    .edu-degree {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+
+    .edu-school { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.2rem; }
+
+    .edu-year {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--border2);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CV VIEWER ── */
+    .cv-section { background: var(--bg); }
+
+    .cv-box {
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .cv-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1.25rem;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .cv-toolbar-left {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .cv-toolbar-right { display: flex; gap: 0.6rem; }
+
+    .cv-toolbar-right a {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      border: 1px solid rgba(45,90,39,0.3);
+      padding: 0.3rem 0.85rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cv-toolbar-right a:hover { background: rgba(45,90,39,0.08); }
+
+    .cv-embed {
+      width: 100%;
+      height: 700px;
+      border: none;
+      display: block;
+      background: var(--bg2);
+    }
+
+    .cv-fallback {
+      padding: 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--bg2); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-heading em { font-style: italic; color: var(--accent); }
+
+    .contact-sub {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      line-height: 1.85;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .contact-link-item {
+      background: var(--card);
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.2s;
+    }
+
+    .contact-link-item:hover { background: var(--bg3); }
+
+    .c-left { display: flex; align-items: center; gap: 1rem; }
+
+    .c-icon {
+      width: 34px; height: 34px;
+      border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem;
+      color: var(--accent);
+      border-radius: 3px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-link-item:hover .c-icon { border-color: var(--accent); }
+
+    .c-lbl {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .c-val { font-size: 0.88rem; }
+
+    .c-arrow { color: var(--muted); font-size: 0.72rem; transition: color 0.2s; }
+
+    .contact-link-item:hover .c-arrow { color: var(--accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border2);
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg3);
+    }
+
+    footer span, footer a {
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 4rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--border2); }
+      .hero-right { padding: 2rem 1.5rem; }
+      .section-inner { padding: 3rem 1.5rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .skills-grid, .projects-grid, .edu-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-meta { border-right: none; border-bottom: 1px solid var(--border2); }
+      footer { flex-direction: column; gap: 0.4rem; text-align: center; padding: 1.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .skills-grid, .projects-grid, .edu-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <nav>
-    <div class="left">
-      <a href="/">Priyanka Pradhan</a>
-    </div>
 
-    <div class="right">
-      <a href="https://github.com/Priyanka212-pradhan" target="_blank">
-        <i class="fa-brands fa-github"></i>
-        <span>GitHub</span>
-      </a>
-      <a href="https://www.linkedin.com/in/priyanka--pradhan/" target="_blank">
-        <i class="fa-brands fa-linkedin"></i>
-        <span>LinkedIn</span>
-      </a>
-      <a href="mailto:priyankapradhan212@gmail.com">
-        <i class="fa-solid fa-envelope"></i>
-        <span>Email</span>
-      </a>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Priyanka Pradhan</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#" class="openCV nav-cv">View CV</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
     </div>
   </nav>
 
-  <main>
-  <!-- HERO + ABOUT -->
-<section class="hero-about-section">
-
-  <!-- LEFT: IMAGE + HERO CONTENT -->
-  <div class="hero-left">
-    <div class="headshot">
-      <img src="images/hero-headshot.jpg" alt="Priyanka Pradhan" />
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Based in Auckland, New Zealand</div>
+      <h1 class="hero-name">Data Analyst<br />&amp; <em>Software</em><br />Engineer</h1>
+      <p class="hero-desc">
+        <strong>2+ years</strong> building backend systems, optimising SQL pipelines,
+        and developing SaaS applications. Proficient in Python, PHP/Laravel, SQL, and Azure DevOps.
+        Completing MIT at Auckland Institute of Studies, <strong>May 2026</strong>.
+      </p>
+      <div class="hero-avail">Available full-time from May 2026 · PSW Visa</div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="#" class="openCV btn-outline">View My CV</a>
+      </div>
     </div>
 
-    <div class="hero-text">
-      <h2>Hi, I'm Priyanka 👋</h2>
-      <h3>Curious mind. Problem solver. Always learning.</h3>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <img src="images/hero-headshot.jpg" alt="Priyanka Pradhan" />
+        <div class="photo-caption">Priyanka Pradhan — Auckland, NZ</div>
+      </div>
 
-      <div class="links">
-  <div class="contact-wrapper">
-    <button class="primary-btn" id="contactBtn">
-      <i class="fa-solid fa-envelope"></i>
-      <span>Contact</span>
-    </button>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">2+</div>
+          <div class="stat-lbl">Years experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Projects</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">5+</div>
+          <div class="stat-lbl">Tech stacks</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">NZ</div>
+          <div class="stat-lbl">Work rights ready</div>
+        </div>
+      </div>
 
-    <div class="contact-options" id="contactOptions">
-      <a href="tel:+640226015694" class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>+64 022 601 5694</span>
-      </a>
-
-      <a href="mailto:priyankapradhan212@gmail.com" class="contact-item">
-        <i class="fa-solid fa-envelope"></i>
-        <span>Email Me</span>
-      </a>
+      <div class="social-row">
+        <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="social-item">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/priyanka--pradhan/" target="_blank" class="social-item">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="mailto:priyankapradhan212@gmail.com" class="social-item">
+          <i class="fa-solid fa-envelope"></i> Email
+        </a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <a href="Priyanka-Pradhan-CV.pdf" download class="secondary-btn">
-    <i class="fa-solid fa-download"></i>
-    <span>Download CV</span>
-  </a>
-</div>
-
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="section-inner">
+      <div class="section-label">01 — About Me</div>
+      <div class="about-grid fade-up">
+        <div class="about-body">
+          <h2 class="about-heading">Building systems that <em>scale</em> and data that speaks</h2>
+          <p>I am a Junior Data Analyst and Software Engineer with <strong>2+ years of professional experience</strong> building backend systems, optimising SQL pipelines, and developing SaaS applications at Hitachi Energy and Afford IT in New Zealand.</p>
+          <p>At Hitachi Energy, I worked on enterprise-grade CTRM and ETRM Tracker systems — contributing to report generation, API integrations, and data workflows. More recently, I completed a Backend Developer internship in Auckland building Laravel services and RESTful APIs for production applications.</p>
+          <p>I am currently completing my <strong>Master of Information Technology</strong> at Auckland Institute of Studies (graduating May 2026), and hold a certification in Data Science and Machine Learning in Python. I am actively seeking a full-time data or software role in New Zealand.</p>
+        </div>
+        <div class="about-facts">
+          <div class="fact-row"><span class="fact-lbl">Location</span><span class="fact-val">Auckland, New Zealand</span></div>
+          <div class="fact-row"><span class="fact-lbl">Graduation</span><span class="fact-val">May 2026 — MIT (AIS)</span></div>
+          <div class="fact-row"><span class="fact-lbl">Work Rights</span><span class="fact-val">PSW Visa from May 2026</span></div>
+          <div class="fact-row"><span class="fact-lbl">Experience</span><span class="fact-val">2+ years professional</span></div>
+          <div class="fact-row"><span class="fact-lbl">Focus Areas</span><span class="fact-val">Data Analysis · Backend Dev</span></div>
+          <div class="fact-row"><span class="fact-lbl">Status</span><span class="fact-val">Open to opportunities</span></div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- RIGHT: ABOUT ME -->
-  <div class="about-right">
-    <h2>About Me</h2>
-    <p>
-       I am a Software Engineer with experience building and supporting
-       SaaS-based applications. I enjoy working on practical, real-world systems and
-       contributing to solutions that are reliable, scalable, and easy to maintain.
-    </p>
-    <p>
-      I have over 2 years of professional experience developing and maintaining 
-      SaaS-based applications, backend systems, RESTful APIs, unit testing, and deployments. 
-      At Hitachi Energy, I worked on the CTRM and ETRM Tracker (Energy Trading and Risk Management),
-      contributing to core functionalities such as report generation, workflows, import/export 
-      methods data tracking, and analytics within ADHIA framework. I optimized SQL queries, designed 
-      and integrated RESTful APIs, and collaborated closely with QA and development teams to 
-      deliver reliable, scalable, and efficient solutions. I enjoy building reliable solutions that scale and make an impact.
-    </p>
-    <p>
-      More recently, I completed a Backend Developer internship in New Zealand, where I
-    worked with Laravel to develop backend services and RESTful APIs, gaining hands-on
-    experience in building features for real-world applications and collaborating with
-    cross-functional teams in a local development environment.
-    </p>
-    <p>
-      Alongside professional work, I am pursuing a Master’s degree in Information Technology at 
-      and hold a certification in Data Science and Machine Learning in Python, which strengthens 
-      my ability to handle data-intensive applications and backend systems.
-    </p>
-    <p>
-      With a strong foundation in backend development and SaaS-based systems, I am keen to
-      grow my career across software development, data engineering, IT operations, and
-      project-oriented roles. I enjoy learning new technologies and applying them to build
-      efficient, maintainable systems.
-    </p>
-  </div>
-
-</section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="skills-section">
-      <h2>Skills</h2>
-
-      <div class="skills-grid">
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-label">02 — Skills</div>
+      <div class="skills-grid fade-up">
         <div class="skill-card">
-          <h4>Programming</h4>
-          <p>PHP, Laravel, Python, SQL, JavaScript, HTML, CSS</p>
+          <div class="skill-card-lbl">Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag hi">Python</span>
+            <span class="skill-tag hi">PHP</span>
+            <span class="skill-tag hi">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+          </div>
         </div>
-
         <div class="skill-card">
-          <h4>Data & Analytics</h4>
-          <p>Pandas, NumPy, ETL, Data Visualization</p>
+          <div class="skill-card-lbl">Frameworks & Libraries</div>
+          <div class="skill-tags">
+            <span class="skill-tag hi">Laravel</span>
+            <span class="skill-tag hi">Pandas</span>
+            <span class="skill-tag hi">NumPy</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Matplotlib</span>
+          </div>
         </div>
-
         <div class="skill-card">
-          <h4>Tools & Platforms</h4>
-          <p>Azure, Git, GitHub, Postman</p>
+          <div class="skill-card-lbl">Databases</div>
+          <div class="skill-tags">
+            <span class="skill-tag hi">MySQL</span>
+            <span class="skill-tag hi">RESTful APIs</span>
+            <span class="skill-tag">ETL Pipelines</span>
+            <span class="skill-tag">Data Cleaning</span>
+          </div>
         </div>
-
         <div class="skill-card">
-          <h4>Practices</h4>
-          <p>SaaS Applications, Agile Methodologies, Unit Testing</p>
+          <div class="skill-card-lbl">Cloud & DevOps</div>
+          <div class="skill-tags">
+            <span class="skill-tag hi">Azure DevOps</span>
+            <span class="skill-tag hi">Git</span>
+            <span class="skill-tag">CI/CD Pipelines</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Postman</span>
+          </div>
         </div>
-
         <div class="skill-card">
-          <h4>Collaboration</h4>
-          <p>Jira, Confluence, SharePoint</p>
+          <div class="skill-card-lbl">Methodologies</div>
+          <div class="skill-tags">
+            <span class="skill-tag hi">Agile</span>
+            <span class="skill-tag hi">SCRUM</span>
+            <span class="skill-tag">SDLC</span>
+            <span class="skill-tag">Unit Testing</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Confluence</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-lbl">Currently Upskilling</div>
+          <div class="skill-tags">
+            <span class="skill-tag hi">Power BI</span>
+            <span class="skill-tag hi">Tableau</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">ARIMA</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section class="experience-section">
-      <h2>Experience</h2>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="exp-section">
+    <div class="section-inner">
+      <div class="section-label">03 — Experience</div>
+      <div class="exp-list fade-up">
 
-      <div class="job">
-        <h3>Software Engineer – Hitachi Energy (Kathmandu, Nepal)</h3>
-        <span>February 2023 – July 2024</span>
-        <ul>
-          <li>Maintained SaaS-based TRM Tracker modules using PHP and JavaScript.</li>
-          <li>Optimized complex SQL queries for large datasets.</li>
-          <li>Designed and integrated RESTful APIs.</li>
-          <li>Used Git and Azure DevOps pipelines for deployments.</li>
-          <li>Worked in Agile and SCRUM teams.</li>
-        </ul>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">Jun 2025 – Aug 2025</div>
+            <div class="exp-co">Afford IT<br />Auckland, NZ</div>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title">Backend Developer Intern</h3>
+            <div class="exp-stack">Laravel · PHP · RESTful APIs · Git · Agile</div>
+            <ul class="exp-bullets">
+              <li>Built and maintained robust backend services using Laravel (PHP), contributing to production web and mobile applications</li>
+              <li>Developed RESTful APIs consumed by frontend React and Bootstrap interfaces, supporting seamless data exchange</li>
+              <li>Managed source code using Git following branching and code review best practices</li>
+              <li>Participated in Agile development workflows including sprint planning and team stand-ups</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-date">Feb 2023 – Jul 2024</div>
+            <div class="exp-co">Hitachi Energy<br />Kathmandu, Nepal</div>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title">Software Engineer</h3>
+            <div class="exp-stack">PHP · JavaScript · SQL · Azure DevOps · SCRUM</div>
+            <ul class="exp-bullets">
+              <li>Maintained and enhanced TRM Tracker SaaS modules using PHP and JavaScript, supporting enterprise business operations across multiple client environments</li>
+              <li>Wrote and optimised complex SQL queries across large datasets, improving data retrieval performance and ensuring accuracy of business-critical reporting</li>
+              <li>Designed and integrated RESTful APIs enabling efficient data exchange between internal systems and third-party services</li>
+              <li>Automated build and deployment pipelines via Azure DevOps, reducing manual release effort and minimising deployment downtime</li>
+              <li>Conducted unit testing and worked closely with QA teams to identify and resolve bugs, improving overall system stability</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <div class="job">
-        <h3>Backend Developer Intern – Afford IT (Auckland, New Zealand)</h3>
-        <span>June 2025 – August 2025</span>
-        <ul>
-          <li>Developed backend services using Laravel.</li>
-          <li>Created RESTful APIs for web and mobile applications.</li>
-          <li>Integrated frontend using Bootstrap and React.</li>
-        </ul>
-      </div>
-    </section>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-label">04 — Projects</div>
+      <div class="projects-grid fade-up">
 
-    <!-- EDUCATION -->
-    <section class="education-section">
-      <h2>Education & Certifications</h2>
-      <ul>
-        <li>
-          <strong>Master of Information Technology</strong><br />
-          Auckland Institute of Studies (2024 – 2026)
-        </li>
-        <li>
-          <strong>Bachelor of Information Management</strong><br />
-          Tribhuvan University (2018 – 2023)
-        </li>
-        <li>
-          <strong>Data Science & Machine Learning in Python</strong><br />
-          Deerwalk Training Center (2022)
-        </li>
-      </ul>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects-section">
-      <h2>Projects</h2>
-
-      <div class="projects-slider">
         <div class="project-card">
-          <h3>Payroll Management System</h3>
-          <p>
-            Developed a basic Payroll Management System using Laravel and MySQL.
-            The system allows companies to manage employee salaries, track attendance,
-            and generate monthly payslips efficiently. It includes backend RESTful APIs,
-            secure user authentication, and optimized SQL queries.
-          </p>
-          <a href="https://github.com/Priyanka212-pradhan" class="primary-btn" target="_blank">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
+          <div class="proj-num">01</div>
+          <h3 class="proj-title">Time Series Sales Forecasting with Data Quality Management</h3>
+          <p class="proj-desc">Experimental research comparing ARIMA and XGBoost forecasting accuracy on Corporación Favorita retail data (2013–2017), before and after applying DQM techniques including IQR, Isolation Forest, and data validation rules.</p>
+          <div class="proj-tech">
+            <span>Python</span><span>ARIMA</span><span>XGBoost</span><span>Pandas</span><span>Scikit-learn</span>
+          </div>
+          <a href="https://github.com/Priyanka212-pradhan/Time-series-analysis" target="_blank" class="proj-link">
+            View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
         <div class="project-card">
-          <h3>Blog Application (User & Admin)</h3>
-          <p>
-            Developed a full-featured Blog Application with user and admin interfaces
-            using Laravel and MySQL. Users can create, edit, and comment on posts,
-            while admins can manage content, moderate comments, and handle user roles.
-            The project demonstrates CRUD operations, authentication, and role-based access.
-          </p>
-          <a href="https://github.com/Priyanka212-pradhan" class="primary-btn" target="_blank">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
+          <div class="proj-num">02</div>
+          <h3 class="proj-title">Payroll Management System</h3>
+          <p class="proj-desc">A full-stack Payroll Management System using Laravel and MySQL. Manages employee salaries, tracks attendance, and generates monthly payslips with secure authentication and optimised SQL queries.</p>
+          <div class="proj-tech">
+            <span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST APIs</span>
+          </div>
+          <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="proj-link">
+            View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </div>
 
-        <!-- Add more project cards here -->
+        <div class="project-card">
+          <div class="proj-num">03</div>
+          <h3 class="proj-title">Blog Application (User & Admin)</h3>
+          <p class="proj-desc">A full-featured blog platform with user and admin interfaces built with Laravel and MySQL. Features CRUD operations, authentication, role-based access control, and content moderation.</p>
+          <div class="proj-tech">
+            <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Auth</span><span>RBAC</span>
+          </div>
+          <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="proj-link">
+            View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <!-- Slider Controls -->
-      <div class="slider-controls">
-        <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
-        <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+  
+
+  <!-- EDUCATION -->
+  <section id="education" class="edu-section">
+    <div class="section-inner">
+      <div class="section-label">05 — Education & Certifications</div>
+      <div class="edu-grid fade-up">
+        <div class="edu-card">
+          <div class="edu-type">Master's Degree</div>
+          <h3 class="edu-degree">Master of Information Technology</h3>
+          <p class="edu-school">Auckland Institute of Studies</p>
+          <p class="edu-year">2024 – May 2026</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-type">Bachelor's Degree</div>
+          <h3 class="edu-degree">Bachelor of Information Management</h3>
+          <p class="edu-school">Tribhuvan University</p>
+          <p class="edu-year">2018 – 2023</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-type">Certification</div>
+          <h3 class="edu-degree">Data Science & Machine Learning in Python</h3>
+          <p class="edu-school">Deerwalk Training Center</p>
+          <p class="edu-year">2022</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
-  </main>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="section-inner">
+      <div class="section-label">07 — Contact</div>
+      <div class="contact-grid fade-up">
+        <div>
+          <h2 class="contact-heading">Let's work <em>together</em></h2>
+          <p class="contact-sub">
+            I am actively looking for full-time Data Analyst or Software Engineer roles in Auckland,
+            available from May 2026 on a Post-Study Work Visa. Feel free to reach out — I'd love to chat.
+          </p>
+          <a href="Priyanka-Pradhan.pdf" download class="btn-primary">
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:priyankapradhan212@gmail.com" class="contact-link-item">
+            <div class="c-left">
+              <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div><span class="c-lbl">Email</span><span class="c-val">priyankapradhan212@gmail.com</span></div>
+            </div>
+            <i class="fa-solid fa-arrow-right c-arrow"></i>
+          </a>
+          <a href="tel:+640226015694" class="contact-link-item">
+            <div class="c-left">
+              <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+              <div><span class="c-lbl">Phone</span><span class="c-val">+64 022 601 5694</span></div>
+            </div>
+            <i class="fa-solid fa-arrow-right c-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/priyanka--pradhan/" target="_blank" class="contact-link-item">
+            <div class="c-left">
+              <div class="c-icon"><i class="fa-brands fa-linkedin"></i></div>
+              <div><span class="c-lbl">LinkedIn</span><span class="c-val">priyanka--pradhan</span></div>
+            </div>
+            <i class="fa-solid fa-arrow-right c-arrow"></i>
+          </a>
+          <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="contact-link-item">
+            <div class="c-left">
+              <div class="c-icon"><i class="fa-brands fa-github"></i></div>
+              <div><span class="c-lbl">GitHub</span><span class="c-val">Priyanka212-pradhan</span></div>
+            </div>
+            <i class="fa-solid fa-arrow-right c-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    © 2026 Priyanka Pradhan | Software Engineer
+    <span>© 2026 Priyanka Pradhan — All rights reserved</span>
+    <a href="https://priyanka212-pradhan.github.io/Portfolio/">priyanka212-pradhan.github.io</a>
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const contactBtn = document.getElementById("contactBtn");
-    const contactOptions = document.getElementById("contactOptions");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    contactBtn.addEventListener("click", () => {
-      contactOptions.classList.toggle("show");
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-links a[href^="#"]');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
+      navAs.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : '';
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("cvModal");
+  const openBtns = document.querySelectorAll(".openCV");
+  const closeBtn = document.querySelector(".cv-close");
+
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "flex";
     });
   });
-</script>
 
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+  </script>
+
+  <!-- CV MODAL -->
+<div id="cvModal" class="cv-modal">
+  <div class="cv-modal-content">
+    <span class="cv-close">&times;</span>
+    <iframe src="Priyanka-Pradhan.pdf" class="cv-frame"></iframe>
+  </div>
+</div>
 </body>
 </html>
