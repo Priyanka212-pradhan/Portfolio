@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Priyanka Pradhan — Data Analyst & Software Engineer</title>
+  <title>Priyanka Pradhan — Data Analyst & Software Engineer | Auckland, NZ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -38,7 +38,6 @@
       overflow-x: hidden;
     }
 
-    /* subtle dot pattern */
     body::before {
       content: '';
       position: fixed;
@@ -74,7 +73,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: center;
     }
 
@@ -89,6 +88,19 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
+
+    /* Download CV button in nav */
+    .nav-dl {
+      color: var(--accent) !important;
+      border: 1.5px solid rgba(45,90,39,0.4) !important;
+      padding: 0.4rem 0.9rem;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-dl:hover { background: rgba(45,90,39,0.07); }
 
     .nav-cta {
       color: #fff !important;
@@ -154,6 +166,13 @@
 
     .hero-desc strong { color: var(--text); font-weight: 500; }
 
+    .hero-badges {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
     .hero-avail {
       display: inline-flex;
       align-items: center;
@@ -165,7 +184,6 @@
       background: rgba(45,90,39,0.06);
       padding: 0.4rem 1rem;
       border-radius: 100px;
-      margin-bottom: 2.5rem;
       letter-spacing: 0.05em;
     }
 
@@ -175,6 +193,21 @@
       border-radius: 50%;
       background: var(--accent);
       animation: pulse 2s infinite;
+    }
+
+    /* PSW badge */
+    .psw-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: #b35a00;
+      border: 1.5px solid rgba(179,90,0,0.3);
+      background: rgba(179,90,0,0.06);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
     }
 
     @keyframes pulse {
@@ -196,6 +229,9 @@
       cursor: pointer;
       text-decoration: none;
       transition: opacity 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .btn-primary:hover { opacity: 0.83; }
@@ -213,6 +249,9 @@
       cursor: pointer;
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
@@ -226,7 +265,6 @@
       gap: 1.25rem;
     }
 
-    /* PHOTO — full face, not cut */
     .hero-photo {
       border: 1.5px solid var(--border2);
       overflow: hidden;
@@ -254,7 +292,6 @@
       border-top: 1px solid var(--border);
     }
 
-    /* stats */
     .stat-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -289,7 +326,6 @@
       letter-spacing: 0.08em;
     }
 
-    /* social */
     .social-row {
       display: flex;
       gap: 1px;
@@ -344,6 +380,219 @@
       height: 1px;
       background: var(--border2);
     }
+
+    /* ── FEATURED PROJECT (above the fold anchor) ── */
+    .featured-section { background: var(--bg); }
+
+    .featured-card {
+      border: 1.5px solid var(--border2);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--card);
+      transition: box-shadow 0.3s;
+    }
+
+    .featured-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
+
+    .featured-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.5rem;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border2);
+    }
+
+    .featured-badge {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      color: var(--accent);
+      background: rgba(45,90,39,0.1);
+      border: 1px solid rgba(45,90,39,0.3);
+      padding: 0.25rem 0.8rem;
+      border-radius: 100px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .featured-links { display: flex; gap: 0.6rem; }
+
+    .featured-links a {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      border: 1px solid rgba(45,90,39,0.3);
+      padding: 0.3rem 0.85rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .featured-links a:hover { background: rgba(45,90,39,0.08); }
+
+    .featured-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .featured-screenshot {
+      border-bottom: 1px solid var(--border2);
+      overflow: hidden;
+      background: var(--bg3);
+      width: 100%;
+    }
+
+    .featured-screenshot img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .featured-card:hover .featured-screenshot img { transform: scale(1.01); }
+
+    /* Placeholder if no image */
+    .screenshot-placeholder {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #e4ddd2 0%, #d0c8bb 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    .screenshot-placeholder i { font-size: 2.5rem; opacity: 0.35; }
+
+    .screenshot-placeholder p {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+
+    /* Info section below image — horizontal layout for the content */
+    .featured-info {
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .featured-info-left { display: flex; flex-direction: column; gap: 1.2rem; }
+    .featured-info-right { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .featured-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .featured-par {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .par-item {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .par-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      min-width: 55px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .par-item strong { color: var(--text); font-weight: 500; }
+
+    /* impact numbers */
+    .impact-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border2);
+      border: 1.5px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .impact-box {
+      background: var(--bg2);
+      padding: 1rem 0.8rem;
+      text-align: center;
+    }
+
+    .impact-num {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .impact-lbl {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .featured-tech { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .featured-tech span {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--accent);
+      border: 1px solid rgba(45,90,39,0.3);
+      background: rgba(45,90,39,0.06);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .featured-prooflinks {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .proof-link {
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--border2);
+      border-radius: 3px;
+      background: var(--bg);
+      transition: all 0.2s;
+    }
+
+    .proof-link:hover { color: var(--accent); border-color: rgba(45,90,39,0.3); background: rgba(45,90,39,0.04); }
+
+    .proof-link i { font-size: 0.72rem; opacity: 0.6; }
 
     /* ── ABOUT ── */
     .about-section { background: var(--bg2); }
@@ -401,57 +650,9 @@
       text-transform: uppercase;
     }
 
-    .fact-val {
-      font-size: 0.88rem;
-      color: var(--text);
-      text-align: right;
-    }
+    .fact-val { font-size: 0.88rem; color: var(--text); text-align: right; }
 
-    /* View cv */
-    /* CV MODAL */
-.cv-modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
-  justify-content: center;
-  align-items: center;
-}
-
-.cv-modal-content {
-  width: 85%;
-  height: 90%;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-  animation: scaleIn 0.3s ease;
-}
-
-.cv-frame {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.cv-close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 30px;
-  cursor: pointer;
-  color: #333;
-  z-index: 10;
-}
-
-/* animation */
-@keyframes scaleIn {
-  from { transform: scale(0.92); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+    .fact-val.green { color: var(--accent); font-weight: 500; }
 
     /* ── SKILLS ── */
     .skills-grid {
@@ -494,7 +695,7 @@
       transition: all 0.2s;
     }
 
-    .skill-card:hover .skill-tag { color: var(--text); border-color: var(--border2); }
+    .skill-card:hover .skill-tag { color: var(--text); }
     .skill-tag.hi { color: var(--accent); border-color: rgba(45,90,39,0.35); background: rgba(45,90,39,0.06); }
 
     /* ── EXPERIENCE ── */
@@ -533,11 +734,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .exp-co {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    .exp-co { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
 
     .exp-content { padding: 2rem; }
 
@@ -575,6 +772,8 @@
       margin-top: 3px;
     }
 
+    .exp-bullets li strong { color: var(--text); font-weight: 500; }
+
     /* ── PROJECTS ── */
     .projects-grid {
       display: grid;
@@ -610,12 +809,34 @@
       line-height: 1.25;
     }
 
-    .proj-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.75;
+    /* PAR format for project cards */
+    .proj-par {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
       flex: 1;
     }
+
+    .proj-par-item {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .proj-par-label {
+      font-family: var(--mono);
+      font-size: 0.59rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      min-width: 50px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .proj-par-item strong { color: var(--text); font-weight: 500; }
 
     .proj-tech { display: flex; flex-wrap: wrap; gap: 5px; }
 
@@ -629,6 +850,8 @@
       border-radius: 2px;
     }
 
+    .proj-links { display: flex; flex-direction: column; gap: 5px; margin-top: auto; }
+
     .proj-link {
       font-family: var(--mono);
       font-size: 0.68rem;
@@ -637,10 +860,11 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      margin-top: auto;
     }
 
     .proj-link:hover { text-decoration: underline; }
+
+    .proj-link.secondary { color: var(--muted); }
 
     /* ── EDUCATION ── */
     .edu-section { background: var(--bg2); }
@@ -686,63 +910,6 @@
       font-size: 0.65rem;
       color: var(--border2);
       letter-spacing: 0.04em;
-    }
-
-    /* ── CV VIEWER ── */
-    .cv-section { background: var(--bg); }
-
-    .cv-box {
-      border: 1.5px solid var(--border2);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .cv-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.85rem 1.25rem;
-      background: var(--bg3);
-      border-bottom: 1px solid var(--border2);
-    }
-
-    .cv-toolbar-left {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .cv-toolbar-right { display: flex; gap: 0.6rem; }
-
-    .cv-toolbar-right a {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--accent);
-      border: 1px solid rgba(45,90,39,0.3);
-      padding: 0.3rem 0.85rem;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .cv-toolbar-right a:hover { background: rgba(45,90,39,0.08); }
-
-    .cv-embed {
-      width: 100%;
-      height: 700px;
-      border: none;
-      display: block;
-      background: var(--bg2);
-    }
-
-    .cv-fallback {
-      padding: 3rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      display: none;
     }
 
     /* ── CONTACT ── */
@@ -824,6 +991,45 @@
 
     .contact-link-item:hover .c-arrow { color: var(--accent); }
 
+    /* CV MODAL */
+    .cv-modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cv-modal-content {
+      width: 85%;
+      height: 90%;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+      animation: scaleIn 0.3s ease;
+    }
+
+    .cv-frame { width: 100%; height: 100%; border: none; }
+
+    .cv-close {
+      position: absolute;
+      top: 12px; right: 18px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+      z-index: 10;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border2);
@@ -845,18 +1051,11 @@
     footer a:hover { color: var(--accent); }
 
     /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links a:not(.nav-cta):not(.nav-dl) { display: none; }
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 4rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid var(--border2); }
       .hero-right { padding: 2rem 1.5rem; }
@@ -865,11 +1064,15 @@
       .skills-grid, .projects-grid, .edu-grid { grid-template-columns: 1fr 1fr; }
       .exp-item { grid-template-columns: 1fr; }
       .exp-meta { border-right: none; border-bottom: 1px solid var(--border2); }
+      .featured-info { grid-template-columns: 1fr; gap: 1.5rem; }
+      .impact-row { grid-template-columns: repeat(3,1fr); }
       footer { flex-direction: column; gap: 0.4rem; text-align: center; padding: 1.5rem; }
     }
 
     @media (max-width: 600px) {
       .skills-grid, .projects-grid, .edu-grid { grid-template-columns: 1fr; }
+      .impact-row { grid-template-columns: 1fr 1fr; }
+      .hero-badges { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -883,7 +1086,10 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#" class="openCV nav-cv">View CV</a>
+      <a href="#" class="openCV">View CV</a>
+      <a href="Priyanka-Pradhan.pdf" download class="nav-dl">
+        <i class="fa-solid fa-download"></i> Resume
+      </a>
       <a href="#contact" class="nav-cta">Hire Me</a>
     </div>
   </nav>
@@ -894,14 +1100,19 @@
       <div class="hero-tag">Based in Auckland, New Zealand</div>
       <h1 class="hero-name">Data Analyst<br />&amp; <em>Software</em><br />Engineer</h1>
       <p class="hero-desc">
-        <strong>2+ years</strong> building backend systems, optimising SQL pipelines,
-        and developing SaaS applications. Proficient in Python, PHP/Laravel, SQL, and Azure DevOps.
-        Completing MIT at Auckland Institute of Studies, <strong>May 2026</strong>.
+        <strong>SQL-driven insights. Power BI storytelling. Backend systems that scale.</strong><br />
+        2+ years translating complex data into decisions that matter — at Hitachi Energy and Afford IT.
+        Completing MIT at Auckland Institute of Studies, graduating <strong>May 2026</strong>.
       </p>
-      <div class="hero-avail">Available full-time from May 2026 · PSW Visa</div>
+      <div class="hero-badges">
+        <div class="hero-avail">Available full-time from May 2026</div>
+        <div class="psw-badge"><i class="fa-solid fa-passport"></i> PSW Visa Ready · NZ Work Rights</div>
+      </div>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">Get in Touch</a>
-        <a href="#" class="openCV btn-outline">View My CV</a>
+        <a href="Priyanka-Pradhan.pdf" download class="btn-outline">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
       </div>
     </div>
 
@@ -917,12 +1128,12 @@
           <div class="stat-lbl">Years experience</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">4+</div>
-          <div class="stat-lbl">Projects</div>
+          <div class="stat-num">$2.7M</div>
+          <div class="stat-lbl">Revenue modelled</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">5+</div>
-          <div class="stat-lbl">Tech stacks</div>
+          <div class="stat-num">4+</div>
+          <div class="stat-lbl">Projects shipped</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">NZ</div>
@@ -937,9 +1148,101 @@
         <a href="https://www.linkedin.com/in/priyanka--pradhan/" target="_blank" class="social-item">
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
-        <a href="mailto:priyankapradhan212@gmail.com" class="social-item">
+        <a href="/cdn-cgi/l/email-protection#2e5e5c47574f40454f5e5c4f4a464f401c1f1c6e49434f4742004d4143" class="social-item">
           <i class="fa-solid fa-envelope"></i> Email
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PROJECT ── -->
+  <section id="featured" class="featured-section">
+    <div class="section-inner">
+      <div class="section-label">Featured Work — SaaS Analytics</div>
+
+      <div class="featured-card">
+        <div class="featured-header">
+          <span class="featured-badge">⭐ Flagship Project</span>
+          <div class="featured-links">
+            <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI" target="_blank">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            
+          </div>
+        </div>
+
+        <div class="featured-body">
+          <!-- SCREENSHOT: Replace src with your actual dashboard screenshot -->
+          <div class="featured-screenshot">
+            <div class="screenshot-placeholder" id="screenshotPlaceholder">
+              <i class="fa-solid fa-chart-bar"></i>
+              <p>Add your dashboard screenshot here</p>
+              <p style="font-size:0.6rem; opacity:0.45;">images/saas-dashboard.png</p>
+            </div>
+            <img src="images/dashboard_preview.jpg" alt="SaaS Revenue Retention & Churn Analytics Dashboard"
+              style="display:none;"
+              onload="this.style.display='block'; document.getElementById('screenshotPlaceholder').style.display='none';" />
+          </div>
+
+          <div class="featured-info">
+            <!-- LEFT: title + PAR narrative -->
+            <div class="featured-info-left">
+              <h2 class="featured-title">SaaS Revenue Retention &amp; Churn Analytics Dashboard</h2>
+              <div class="featured-par">
+                <div class="par-item">
+                  <span class="par-label">Problem</span>
+                  <span>Analyzed <strong>$4.4M in revenue at risk</strong> for a B2B SaaS business with no visibility into which customer segments were churning or why.</span>
+                </div>
+                <div class="par-item">
+                  <span class="par-label">Action</span>
+                  <span>Engineered a <strong>SQL transformation layer</strong> with views using <code>LAG()</code> window functions, NULL handling, and data validation rules — then built a <strong>DAX-powered What-If simulation</strong> in Power BI to model recovery scenarios.</span>
+                </div>
+                <div class="par-item">
+                  <span class="par-label">Result</span>
+                  <span>Surfaced a <strong>37.8% churn rate</strong>, identified high-risk segments, and modeled up to <strong>$2.7M in recoverable revenue</strong> — giving stakeholders a clear, actionable retention strategy.</span>
+                </div>
+              </div>
+              <div class="featured-tech">
+                <span>SQL</span><span>Power BI</span><span>DAX</span>
+                <span>Window Functions</span><span>Data Modeling</span><span>SaaS Metrics</span>
+              </div>
+            </div>
+
+            <!-- RIGHT: impact numbers + proof links -->
+            <div class="featured-info-right">
+              <div class="impact-row">
+                <div class="impact-box">
+                  <div class="impact-num">37.8%</div>
+                  <div class="impact-lbl">Churn rate found</div>
+                </div>
+                <div class="impact-box">
+                  <div class="impact-num">$4.4M</div>
+                  <div class="impact-lbl">Revenue analysed</div>
+                </div>
+                <div class="impact-box">
+                  <div class="impact-num">$2.7M</div>
+                  <div class="impact-lbl">Modelled savings</div>
+                </div>
+              </div>
+              <div class="featured-prooflinks">
+                <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI/blob/main/vw_RevenueRisk.sql"
+                   target="_blank" class="proof-link">
+                  <i class="fa-brands fa-github"></i>
+                  <strong>vw_RevenueRisk.sql</strong> — advanced SQL with LAG() window functions
+                </a>
+                <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI/blob/main/Baseline_Report_Metrics_Total_Monthly_revenue.sql"
+                   target="_blank" class="proof-link">
+                  <i class="fa-brands fa-github"></i>
+                  <strong>data_quality.sql</strong> — NULL handling, blank detection, validation rules
+                </a>
+                <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI" target="_blank" class="proof-link">
+                  <i class="fa-brands fa-github"></i>
+                  Full repository — README, Power BI file, data model diagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -948,20 +1251,27 @@
   <section id="about" class="about-section">
     <div class="section-inner">
       <div class="section-label">01 — About Me</div>
-      <div class="about-grid fade-up">
+      <div class="about-grid">
         <div class="about-body">
-          <h2 class="about-heading">Building systems that <em>scale</em> and data that speaks</h2>
-          <p>I am a Junior Data Analyst and Software Engineer with <strong>2+ years of professional experience</strong> building backend systems, optimising SQL pipelines, and developing SaaS applications at Hitachi Energy and Afford IT in New Zealand.</p>
-          <p>At Hitachi Energy, I worked on enterprise-grade CTRM and ETRM Tracker systems — contributing to report generation, API integrations, and data workflows. More recently, I completed a Backend Developer internship in Auckland building Laravel services and RESTful APIs for production applications.</p>
-          <p>I am currently completing my <strong>Master of Information Technology</strong> at Auckland Institute of Studies (graduating May 2026), and hold a certification in Data Science and Machine Learning in Python. I am actively seeking a full-time data or software role in New Zealand.</p>
+          <h2 class="about-heading">Turning messy data into <em>decisions</em> that move business</h2>
+          <p>
+            I am an <strong>Information Technology professional specialising in SQL-driven insights and interactive Power BI storytelling</strong>, with 2+ years of hands-on experience building backend systems, optimising data pipelines, and developing SaaS applications at Hitachi Energy and Afford IT.
+          </p>
+          <p>
+            My focus is translating complex SaaS and enterprise metrics into <strong>actionable business strategies</strong> — the kind that a CEO can act on Monday morning. I don't just build dashboards; I build the SQL transformation layers, data quality checks, and simulation models underneath them.
+          </p>
+          <p>
+            I completed a Backend Developer internship in Auckland building Laravel services and RESTful APIs, and previously worked on enterprise CTRM/ETRM Tracker systems at Hitachi Energy. I am currently completing my <strong>Master of Information Technology</strong> at Auckland Institute of Studies (May 2026), and hold a certification in Data Science and Machine Learning in Python.
+          </p>
         </div>
         <div class="about-facts">
           <div class="fact-row"><span class="fact-lbl">Location</span><span class="fact-val">Auckland, New Zealand</span></div>
           <div class="fact-row"><span class="fact-lbl">Graduation</span><span class="fact-val">May 2026 — MIT (AIS)</span></div>
-          <div class="fact-row"><span class="fact-lbl">Work Rights</span><span class="fact-val">PSW Visa from May 2026</span></div>
+          <div class="fact-row"><span class="fact-lbl">Work Rights</span><span class="fact-val green">✓ PSW Visa — May 2026</span></div>
           <div class="fact-row"><span class="fact-lbl">Experience</span><span class="fact-val">2+ years professional</span></div>
-          <div class="fact-row"><span class="fact-lbl">Focus Areas</span><span class="fact-val">Data Analysis · Backend Dev</span></div>
-          <div class="fact-row"><span class="fact-lbl">Status</span><span class="fact-val">Open to opportunities</span></div>
+          <div class="fact-row"><span class="fact-lbl">Specialisation</span><span class="fact-val">Data Analytics · Backend Dev</span></div>
+          <div class="fact-row"><span class="fact-lbl">Tools</span><span class="fact-val">SQL · Power BI · Python · Laravel</span></div>
+          <div class="fact-row"><span class="fact-lbl">Status</span><span class="fact-val green">Open to opportunities</span></div>
         </div>
       </div>
     </div>
@@ -971,7 +1281,7 @@
   <section id="skills">
     <div class="section-inner">
       <div class="section-label">02 — Skills</div>
-      <div class="skills-grid fade-up">
+      <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-card-lbl">Languages</div>
           <div class="skill-tags">
@@ -995,12 +1305,14 @@
           </div>
         </div>
         <div class="skill-card">
-          <div class="skill-card-lbl">Databases</div>
+          <div class="skill-card-lbl">Data & Analytics</div>
           <div class="skill-tags">
+            <span class="skill-tag hi">Power BI</span>
+            <span class="skill-tag hi">DAX</span>
             <span class="skill-tag hi">MySQL</span>
-            <span class="skill-tag hi">RESTful APIs</span>
             <span class="skill-tag">ETL Pipelines</span>
-            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Data Modeling</span>
+            <span class="skill-tag">RESTful APIs</span>
           </div>
         </div>
         <div class="skill-card">
@@ -1016,8 +1328,8 @@
         <div class="skill-card">
           <div class="skill-card-lbl">Methodologies</div>
           <div class="skill-tags">
-            <span class="skill-tag hi">Agile</span>
-            <span class="skill-tag hi">SCRUM</span>
+            <span class="skill-tag hi">Agile / SCRUM</span>
+            <span class="skill-tag hi">Data Quality Mgmt</span>
             <span class="skill-tag">SDLC</span>
             <span class="skill-tag">Unit Testing</span>
             <span class="skill-tag">Jira</span>
@@ -1027,11 +1339,11 @@
         <div class="skill-card">
           <div class="skill-card-lbl">Currently Upskilling</div>
           <div class="skill-tags">
-            <span class="skill-tag hi">Power BI</span>
             <span class="skill-tag hi">Tableau</span>
-            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag hi">Machine Learning</span>
             <span class="skill-tag">XGBoost</span>
             <span class="skill-tag">ARIMA</span>
+            <span class="skill-tag">Azure Data Factory</span>
           </div>
         </div>
       </div>
@@ -1042,7 +1354,7 @@
   <section id="experience" class="exp-section">
     <div class="section-inner">
       <div class="section-label">03 — Experience</div>
-      <div class="exp-list fade-up">
+      <div class="exp-list">
 
         <div class="exp-item">
           <div class="exp-meta">
@@ -1053,10 +1365,10 @@
             <h3 class="exp-title">Backend Developer Intern</h3>
             <div class="exp-stack">Laravel · PHP · RESTful APIs · Git · Agile</div>
             <ul class="exp-bullets">
-              <li>Built and maintained robust backend services using Laravel (PHP), contributing to production web and mobile applications</li>
-              <li>Developed RESTful APIs consumed by frontend React and Bootstrap interfaces, supporting seamless data exchange</li>
-              <li>Managed source code using Git following branching and code review best practices</li>
-              <li>Participated in Agile development workflows including sprint planning and team stand-ups</li>
+              <li>Built and maintained robust backend services using <strong>Laravel (PHP)</strong>, contributing directly to production web and mobile applications used by real clients</li>
+              <li>Developed RESTful APIs consumed by React and Bootstrap frontends — ensuring reliable data exchange and clean separation of concerns</li>
+              <li>Managed source code using Git with branching strategies and participated in peer code reviews to maintain code quality</li>
+              <li>Delivered features within Agile sprint cycles, attending daily stand-ups and contributing to sprint retrospectives</li>
             </ul>
           </div>
         </div>
@@ -1070,10 +1382,10 @@
             <h3 class="exp-title">Software Engineer</h3>
             <div class="exp-stack">PHP · JavaScript · SQL · Azure DevOps · SCRUM</div>
             <ul class="exp-bullets">
-              <li>Maintained and enhanced TRM Tracker SaaS modules using PHP and JavaScript, supporting enterprise business operations across multiple client environments</li>
-              <li>Wrote and optimised complex SQL queries across large datasets, improving data retrieval performance and ensuring accuracy of business-critical reporting</li>
-              <li>Designed and integrated RESTful APIs enabling efficient data exchange between internal systems and third-party services</li>
-              <li>Automated build and deployment pipelines via Azure DevOps, reducing manual release effort and minimising deployment downtime</li>
+              <li>Maintained and enhanced enterprise CTRM/ETRM Tracker SaaS modules using PHP and JavaScript, supporting <strong>multi-client business-critical operations</strong> across the energy sector</li>
+              <li>Wrote and optimised complex SQL queries across large datasets — improving data retrieval speed and ensuring accuracy of <strong>business-critical financial reports</strong></li>
+              <li>Designed and integrated RESTful APIs enabling efficient data exchange between internal systems and third-party services, reducing manual data handling</li>
+              <li>Automated build and deployment pipelines via <strong>Azure DevOps</strong>, cutting manual release effort and minimising deployment downtime</li>
               <li>Conducted unit testing and worked closely with QA teams to identify and resolve bugs, improving overall system stability</li>
             </ul>
           </div>
@@ -1086,84 +1398,142 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-inner">
-      <div class="section-label">04 — Projects</div>
-      <div class="projects-grid fade-up">
+      <div class="section-label">04 — All Projects</div>
+      <div class="projects-grid">
 
+        <!-- Project 1 -->
         <div class="project-card">
           <div class="proj-num">01</div>
           <h3 class="proj-title">Time Series Sales Forecasting with Data Quality Management</h3>
-          <p class="proj-desc">Experimental research comparing ARIMA and XGBoost forecasting accuracy on Corporación Favorita retail data (2013–2017), before and after applying DQM techniques including IQR, Isolation Forest, and data validation rules.</p>
+          <div class="proj-par">
+            <div class="proj-par-item">
+              <span class="proj-par-label">Problem</span>
+              <span>Retail demand forecasting on <strong>Corporación Favorita's 4-year dataset</strong> (2013–2017) was unreliable due to undetected outliers and data quality issues.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Action</span>
+              <span>Applied IQR, Isolation Forest, and data validation rules as a <strong>DQM pre-processing layer</strong> before running ARIMA and XGBoost forecasting models.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Result</span>
+              <span>Demonstrated statistically significant <strong>forecast accuracy improvements</strong> post-DQM, proving data quality is a first-order concern before any model tuning.</span>
+            </div>
+          </div>
           <div class="proj-tech">
             <span>Python</span><span>ARIMA</span><span>XGBoost</span><span>Pandas</span><span>Scikit-learn</span>
           </div>
-          <a href="https://github.com/Priyanka212-pradhan/Time-series-analysis" target="_blank" class="proj-link">
-            View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="proj-links">
+            <a href="https://github.com/Priyanka212-pradhan/Time-series-analysis" target="_blank" class="proj-link">
+              View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
+        <!-- Project 2 — SaaS Dashboard (teaser pointing to featured) -->
         <div class="project-card">
-        <div class="proj-num">02</div>
-        <h3 class="proj-title">SaaS Revenue Retention & Churn Analytics Dashboard</h3>
-        
-        <p class="proj-desc">
-          Built an end-to-end SaaS analytics dashboard using SQL and Power BI to analyze customer churn, 
-          revenue loss, and retention trends. Identified high-risk customer segments and estimated potential 
-          revenue recovery of up to $1.3M using a what-if simulation model.
-        </p>
-
-        <div class="proj-tech">
-          <span>SQL</span>
-          <span>Power BI</span>
-          <span>DAX</span>
-          <span>Data Modeling</span>
-          <span>SaaS Metrics</span>
+          <div class="proj-num">02</div>
+          <h3 class="proj-title">SaaS Revenue Retention &amp; Churn Analytics Dashboard</h3>
+          <div class="proj-par">
+            <div class="proj-par-item">
+              <span class="proj-par-label">Problem</span>
+              <span>A B2B SaaS company had <strong>$4.4M in revenue at risk</strong> with no visibility into churn patterns or which customer segments to prioritise for retention.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Action</span>
+              <span>Engineered a <strong>SQL transformation layer</strong> using LAG() window functions and DAX-powered What-If simulation in Power BI to model recovery scenarios.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Result</span>
+              <span>Identified a <strong>37.8% churn rate</strong> and modeled up to <strong>$2.7M in recoverable revenue</strong>, giving leadership a clear retention strategy.</span>
+            </div>
+          </div>
+          <div class="proj-tech">
+            <span>SQL</span><span>Power BI</span><span>DAX</span><span>Data Modeling</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Priyanka212-pradhan/saas-churn-analytics/blob/main/sql/vw_RevenueRisk.sql"
+               target="_blank" class="proj-link">
+              View SQL file <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#featured" class="proj-link secondary">
+              ↑ See featured case study above
+            </a>
+          </div>
         </div>
 
-        <a href="https://github.com/YOUR-REPO-LINK" target="_blank" class="proj-link">
-          View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
-      </div>
-
+        <!-- Project 3 -->
         <div class="project-card">
           <div class="proj-num">03</div>
           <h3 class="proj-title">Payroll Management System</h3>
-          <p class="proj-desc">A full-stack Payroll Management System using Laravel and MySQL. Manages employee salaries, tracks attendance, and generates monthly payslips with secure authentication and optimised SQL queries.</p>
+          <div class="proj-par">
+            <div class="proj-par-item">
+              <span class="proj-par-label">Problem</span>
+              <span>Manual payroll processing was error-prone and time-consuming, with no centralised system to track attendance, salaries, and payslip generation.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Action</span>
+              <span>Built a <strong>full-stack system in Laravel and MySQL</strong> with secure authentication, attendance tracking, and automated monthly payslip generation via REST APIs.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Result</span>
+              <span>Delivered a production-ready payroll system with <strong>optimised SQL queries</strong> reducing report generation time and eliminating manual calculation errors.</span>
+            </div>
+          </div>
           <div class="proj-tech">
             <span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST APIs</span>
           </div>
-          <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="proj-link">
-            View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="proj-links">
+            <a href="https://github.com/Priyanka212-pradhan/Payroll-system" target="_blank" class="proj-link">
+              View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
+        <!-- Project 4 -->
         <div class="project-card">
           <div class="proj-num">04</div>
-          <h3 class="proj-title">Blog Application (User & Admin)</h3>
-          <p class="proj-desc">A full-featured blog platform with user and admin interfaces built with Laravel and MySQL. Features CRUD operations, authentication, role-based access control, and content moderation.</p>
+          <h3 class="proj-title">Blog Platform with Role-Based Access Control</h3>
+          <div class="proj-par">
+            <div class="proj-par-item">
+              <span class="proj-par-label">Problem</span>
+              <span>Content teams needed a self-managed publishing platform with separate user and admin workflows, moderation controls, and secure login — without relying on off-the-shelf CMS tools.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Action</span>
+              <span>Built a full-featured blog platform in <strong>Laravel and MySQL</strong> with CRUD operations, Laravel Auth, and a custom <strong>role-based access control (RBAC)</strong> system.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Result</span>
+              <span>Delivered a secure, scalable platform with distinct admin and user experiences, demonstrating competency in <strong>backend architecture and access control design</strong>.</span>
+            </div>
+          </div>
           <div class="proj-tech">
             <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Auth</span><span>RBAC</span>
           </div>
-          <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="proj-link">
-            View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="proj-links">
+            <a href="https://github.com/Priyanka212-pradhan/Blog-Application" target="_blank" class="proj-link">
+              View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  
-
   <!-- EDUCATION -->
   <section id="education" class="edu-section">
     <div class="section-inner">
-      <div class="section-label">05 — Education & Certifications</div>
-      <div class="edu-grid fade-up">
+      <div class="section-label">05 — Education &amp; Certifications</div>
+      <div class="edu-grid">
         <div class="edu-card">
           <div class="edu-type">Master's Degree</div>
           <h3 class="edu-degree">Master of Information Technology</h3>
           <p class="edu-school">Auckland Institute of Studies</p>
           <p class="edu-year">2024 – May 2026</p>
+          <div class="edu-award">
+            <i class="fa-solid fa-award"></i> Certificate of Academic Excellence
+          </div>
         </div>
         <div class="edu-card">
           <div class="edu-type">Bachelor's Degree</div>
@@ -1173,7 +1543,7 @@
         </div>
         <div class="edu-card">
           <div class="edu-type">Certification</div>
-          <h3 class="edu-degree">Data Science & Machine Learning in Python</h3>
+          <h3 class="edu-degree">Data Science &amp; Machine Learning in Python</h3>
           <p class="edu-school">Deerwalk Training Center</p>
           <p class="edu-year">2022</p>
         </div>
@@ -1181,28 +1551,31 @@
     </div>
   </section>
 
-
-
   <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <div class="section-inner">
       <div class="section-label">06 — Contact</div>
-      <div class="contact-grid fade-up">
+      <div class="contact-grid">
         <div>
           <h2 class="contact-heading">Let's work <em>together</em></h2>
           <p class="contact-sub">
-            I am actively looking for full-time Data Analyst or Software Engineer roles in Auckland,
-            available from May 2026 on a Post-Study Work Visa. Feel free to reach out — I'd love to chat.
+            I am actively seeking full-time Data Analyst or Software Engineer roles in Auckland,
+            available from <strong>May 2026</strong> on a Post-Study Work Visa.
+            Whether it's a data challenge that needs SQL architecture, a Power BI dashboard that needs
+            business storytelling, or a backend system that needs building — I'd love to chat.
           </p>
           <a href="Priyanka-Pradhan.pdf" download class="btn-primary">
-            <i class="fa-solid fa-download"></i> Download CV
+            <i class="fa-solid fa-download"></i> Download Resume
           </a>
         </div>
         <div class="contact-links">
           <a href="mailto:priyankapradhan212@gmail.com" class="contact-link-item">
             <div class="c-left">
               <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div><span class="c-lbl">Email</span><span class="c-val">priyankapradhan212@gmail.com</span></div>
+              <div>
+                <span class="c-lbl">Email</span>
+                <span class="c-val">priyankapradhan212@gmail.com</span>
+              </div>
             </div>
             <i class="fa-solid fa-arrow-right c-arrow"></i>
           </a>
@@ -1216,14 +1589,14 @@
           <a href="https://www.linkedin.com/in/priyanka--pradhan/" target="_blank" class="contact-link-item">
             <div class="c-left">
               <div class="c-icon"><i class="fa-brands fa-linkedin"></i></div>
-              <div><span class="c-lbl">LinkedIn</span><span class="c-val">priyanka--pradhan</span></div>
+              <div><span class="c-lbl">LinkedIn</span><span class="c-val">linkedin.com/in/priyanka--pradhan</span></div>
             </div>
             <i class="fa-solid fa-arrow-right c-arrow"></i>
           </a>
           <a href="https://github.com/Priyanka212-pradhan" target="_blank" class="contact-link-item">
             <div class="c-left">
               <div class="c-icon"><i class="fa-brands fa-github"></i></div>
-              <div><span class="c-lbl">GitHub</span><span class="c-val">Priyanka212-pradhan</span></div>
+              <div><span class="c-lbl">GitHub</span><span class="c-val">github.com/Priyanka212-pradhan</span></div>
             </div>
             <i class="fa-solid fa-arrow-right c-arrow"></i>
           </a>
@@ -1237,12 +1610,16 @@
     <a href="https://priyanka212-pradhan.github.io/Portfolio/">priyanka212-pradhan.github.io</a>
   </footer>
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  <!-- CV MODAL -->
+  <div id="cvModal" class="cv-modal">
+    <div class="cv-modal-content">
+      <span class="cv-close">&times;</span>
+      <iframe src="Priyanka-Pradhan.pdf" class="cv-frame"></iframe>
+    </div>
+  </div>
 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Active nav highlight
     const sections = document.querySelectorAll('section[id]');
     const navAs = document.querySelectorAll('.nav-links a[href^="#"]');
     window.addEventListener('scroll', () => {
@@ -1253,38 +1630,27 @@
       });
     });
 
+    // CV Modal
     document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("cvModal");
-  const openBtns = document.querySelectorAll(".openCV");
-  const closeBtn = document.querySelector(".cv-close");
+      const modal = document.getElementById("cvModal");
+      const openBtns = document.querySelectorAll(".openCV");
+      const closeBtn = document.querySelector(".cv-close");
 
-  openBtns.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      modal.style.display = "flex";
+      openBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.style.display = "flex";
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+      }
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) modal.style.display = "none";
+      });
     });
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  }
-
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-});
   </script>
-
-  <!-- CV MODAL -->
-<div id="cvModal" class="cv-modal">
-  <div class="cv-modal-content">
-    <span class="cv-close">&times;</span>
-    <iframe src="Priyanka-Pradhan.pdf" class="cv-frame"></iframe>
-  </div>
-</div>
-</body>
-</html>
