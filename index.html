@@ -164,6 +164,26 @@
       margin-bottom: 2rem;
     }
 
+    /* ── SLIDER SYSTEM CSS (Crucial Fix) ── */
+    .featured-slider-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .featured-slider-track {
+      display: flex;
+      width: 200%; /* Spans across two slides */
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .slider-slide {
+      width: 50%; /* Each slide takes exactly 100% of the viewport width container */
+      flex-shrink: 0;
+      box-sizing: border-box;
+      padding: 0 10px; /* Clean gap handling between shifts */
+    }
+
     .hero-desc strong { color: var(--text); font-weight: 500; }
 
     .hero-badges {
@@ -414,6 +434,22 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
+
+    .slider-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: #000;
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+
+  .slider-btn:hover {
+  background: #000;
+  color: #fff;
+  }
 
     .featured-links { display: flex; gap: 0.6rem; }
 
@@ -1087,7 +1123,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#" class="openCV">View CV</a>
-      <a href="Priyanka-Pradhan.pdf" download class="nav-dl">
+      <a href="Pradhan_Priyanka_Data_Analyst_CV.pdf" download class="nav-dl">
         <i class="fa-solid fa-download"></i> Resume
       </a>
       <a href="#contact" class="nav-cta">Hire Me</a>
@@ -1110,7 +1146,7 @@
       </div>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">Get in Touch</a>
-        <a href="Priyanka-Pradhan.pdf" download class="btn-outline">
+        <a href="Pradhan_Priyanka_Data_Analyst_CV.pdf" download class="btn-outline">
           <i class="fa-solid fa-download"></i> Download Resume
         </a>
       </div>
@@ -1158,90 +1194,111 @@
   <!-- ── FEATURED PROJECT ── -->
   <section id="featured" class="featured-section">
     <div class="section-inner">
-      <div class="section-label">Featured Work — SaaS Analytics</div>
-
-      <div class="featured-card">
-        <div class="featured-header">
-          <span class="featured-badge">⭐ Flagship Project</span>
-          <div class="featured-links">
-            <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI" target="_blank">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
-            
-          </div>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div class="section-label" style="margin-bottom: 0;">03 — Featured Work</div>
+        <div class="slider-controls" style="display: flex; gap: 0.75rem;">
+          <button onclick="moveSlider(-1)" class="slider-btn" aria-label="Previous Project">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button onclick="moveSlider(1)" class="slider-btn" aria-label="Next Project">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
+      </div>
 
-        <div class="featured-body">
-          <!-- SCREENSHOT: Replace src with your actual dashboard screenshot -->
-          <div class="featured-screenshot">
-            <div class="screenshot-placeholder" id="screenshotPlaceholder">
-              <i class="fa-solid fa-chart-bar"></i>
-              <p>Add your dashboard screenshot here</p>
-              <p style="font-size:0.6rem; opacity:0.45;">images/saas-dashboard.png</p>
-            </div>
-            <img src="images/dashboard_preview.jpg" alt="SaaS Revenue Retention & Churn Analytics Dashboard"
-              style="display:none;"
-              onload="this.style.display='block'; document.getElementById('screenshotPlaceholder').style.display='none';" />
-          </div>
-
-          <div class="featured-info">
-            <!-- LEFT: title + PAR narrative -->
-            <div class="featured-info-left">
-              <h2 class="featured-title">SaaS Revenue Retention &amp; Churn Analytics Dashboard</h2>
-              <div class="featured-par">
-                <div class="par-item">
-                  <span class="par-label">Problem</span>
-                  <span>Analyzed <strong>$4.4M in revenue at risk</strong> for a B2B SaaS business with no visibility into which customer segments were churning or why.</span>
-                </div>
-                <div class="par-item">
-                  <span class="par-label">Action</span>
-                  <span>Engineered a <strong>SQL transformation layer</strong> with views using <code>LAG()</code> window functions, NULL handling, and data validation rules — then built a <strong>DAX-powered What-If simulation</strong> in Power BI to model recovery scenarios.</span>
-                </div>
-                <div class="par-item">
-                  <span class="par-label">Result</span>
-                  <span>Surfaced a <strong>37.8% churn rate</strong>, identified high-risk segments, and modeled up to <strong>$1.3M in recoverable revenue</strong> — giving stakeholders a clear, actionable retention strategy.</span>
+      <div class="featured-slider-container">
+        <div class="featured-slider-track" id="sliderTrack">
+          
+          <div class="slider-slide">
+            <div class="featured-card">
+              <div class="featured-header">
+                <span class="featured-badge">⭐ Flagship Project</span>
+                <div class="featured-links">
+                  <a href="https://github.com/Priyanka212-pradhan/NZ-CPI-Analytics" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHub
+                  </a>
                 </div>
               </div>
-              <div class="featured-tech">
-                <span>SQL</span><span>Power BI</span><span>DAX</span>
-                <span>Window Functions</span><span>Data Modeling</span><span>SaaS Metrics</span>
-              </div>
-            </div>
-
-            <!-- RIGHT: impact numbers + proof links -->
-            <div class="featured-info-right">
-              <div class="impact-row">
-                <div class="impact-box">
-                  <div class="impact-num">37.8%</div>
-                  <div class="impact-lbl">Churn rate found</div>
+              <div class="featured-body">
+                <div class="featured-screenshot">
+                  <div class="screenshot-placeholder" id="cpiScreenshotPlaceholder">
+                    <i class="fa-solid fa-database"></i>
+                    <p>Data Pipeline & ETL Architecture</p>
+                  </div>
+                  <img 
+                  src="images/cpi_preview.jpg" 
+                  alt="New Zealand Consumers Price Index Analytics Dashboard" 
+                  class="featured-img"
+                  onload="document.getElementById('cpiScreenshotPlaceholder').style.display='none';" 
+                />
                 </div>
-                <div class="impact-box">
-                  <div class="impact-num">$4.4M</div>
-                  <div class="impact-lbl">Revenue analysed</div>
+                <div class="featured-info">
+                  <div class="featured-info-left">
+                    <h2 class="featured-title">New Zealand Consumers Price Index (CPI) Analytics</h2>
+                    <div class="featured-par">
+                      <div class="par-item"><span class="par-label">Problem</span><span>Macroeconomic inflation data from Statistics New Zealand is trapped in dense tables, making rapid quarterly shifts difficult to track.</span></div>
+                      <div class="par-item"><span class="par-label">Action</span><span>Engineered an automated data extraction and transformation pipeline using Python and Pandas to clean the "consumers-price-index-march-2026-quarter" datasets.</span></div>
+                      <div class="par-item"><span class="par-label">Result</span><span>Built an optimized data layer separating target inflation drivers across commodity groups, creating clean structured records.</span></div>
+                    </div>
+                  </div>
+                  <div class="featured-info-right">
+                    <div class="impact-row">
+                      <div class="impact-box"><div class="impact-num">Mar 2026</div><div class="impact-lbl">Latest Quarter Data</div></div>
+                      <div class="impact-box"><div class="impact-num">Python</div><div class="impact-lbl">ETL Pipeline Engine</div></div>
+                      <div class="impact-box"><div class="impact-num">Isolated</div><div class="impact-lbl">Inflation Drivers Layer</div></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="impact-box">
-                  <div class="impact-num">$1.3M</div>
-                  <div class="impact-lbl">Modelled savings</div>
-                </div>
-              </div>
-              <div class="featured-prooflinks">
-                <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI/blob/main/vw_RevenueRisk.sql"
-                   target="_blank" class="proof-link">
-                  <i class="fa-brands fa-github"></i>
-                  <strong>vw_RevenueRisk.sql</strong> — advanced SQL with LAG() window functions
-                </a>
-                <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI/blob/main/Baseline_Report_Metrics_Total_Monthly_revenue.sql"
-                   target="_blank" class="proof-link">
-                  <i class="fa-brands fa-github"></i>
-                  <strong>data_quality.sql</strong> — NULL handling, blank detection, validation rules
-                </a>
-                <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI" target="_blank" class="proof-link">
-                  <i class="fa-brands fa-github"></i>
-                  Full repository — README, Power BI file, data model diagram
-                </a>
               </div>
             </div>
           </div>
+
+          <div class="slider-slide">
+            <div class="featured-card">
+              <div class="featured-header">
+                <span class="featured-badge">⭐ Flagship Project</span>
+                <div class="featured-links">
+                  <a href="https://github.com/Priyanka212-pradhan/SaaS-Revenue-Retention-PowerBI" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHub
+                  </a>
+                </div>
+              </div>
+              <div class="featured-body">
+                <div class="featured-screenshot">
+                  <div class="screenshot-placeholder" id="screenshotPlaceholder">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <p>SaaS Revenue Analytics Dashboard Preview</p>
+                  </div>
+                  <img 
+                  src="images/dashboard_preview.jpg" 
+                  alt="SaaS Revenue Retention and Churn Analytics Dashboard" 
+                  class="featured-img"
+                  /* 2. FIXED: Now accurately targeting 'screenshotPlaceholder' */
+                  onload="document.getElementById('screenshotPlaceholder').style.display='none';" 
+                />
+                </div>
+                <div class="featured-info">
+                  <div class="featured-info-left">
+                    <h2 class="featured-title">SaaS Revenue Retention &amp; Churn Analytics Dashboard</h2>
+                    <div class="featured-par">
+                      <div class="par-item"><span class="par-label">Problem</span><span>Analyzed $4.4M in revenue at risk for a B2B SaaS business with zero segment visibility.</span></div>
+                      <div class="par-item"><span class="par-label">Action</span><span>Engineered a SQL transformation layer using LAG() window functions and built a DAX-powered What-If simulation in Power BI.</span></div>
+                      <div class="par-item"><span class="par-label">Result</span><span>Surfaced a 37.8% churn rate and modeled up to $1.3M in recoverable revenue.</span></div>
+                    </div>
+                  </div>
+                  <div class="featured-info-right">
+                    <div class="impact-row">
+                      <div class="impact-box"><div class="impact-num">37.8%</div><div class="impact-lbl">Churn rate found</div></div>
+                      <div class="impact-box"><div class="impact-num">$4.4M</div><div class="impact-lbl">Revenue analysed</div></div>
+                      <div class="impact-box"><div class="impact-num">$1.3M</div><div class="impact-lbl">Modelled savings</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1261,16 +1318,16 @@
             My focus is translating complex SaaS and enterprise metrics into <strong>actionable business strategies</strong> — the kind that a CEO can act on Monday morning. I don't just build dashboards; I build the SQL transformation layers, data quality checks, and simulation models underneath them.
           </p>
           <p>
-            I completed a Backend Developer internship in Auckland building Laravel services and RESTful APIs, and previously worked on enterprise CTRM/ETRM Tracker systems at Hitachi Energy. I am currently completing my <strong>Master of Information Technology</strong> at Auckland Institute of Studies (May 2026), and hold a certification in Data Science and Machine Learning in Python.
+            I completed a Backend Developer internship in Auckland building Laravel services and RESTful APIs, and previously worked on enterprise CTRM/ETRM Tracker systems at Hitachi Energy. Having recently graduated with a <strong>Master of Information Technology</strong> from Auckland Institute of Studies (May 2026), and holding a certification in Data Science and Machine Learning in Python.
           </p>
         </div>
         <div class="about-facts">
           <div class="fact-row"><span class="fact-lbl">Location</span><span class="fact-val">Auckland, New Zealand</span></div>
-          <div class="fact-row"><span class="fact-lbl">Graduation</span><span class="fact-val">May 2026 — MIT (AIS)</span></div>
+          <div class="fact-row"><span class="fact-lbl">Graduated</span><span class="fact-val">May 2026 — MIT (AIS)</span></div>
           <div class="fact-row"><span class="fact-lbl">Work Rights</span><span class="fact-val green">✓ PSW Visa — May 2026</span></div>
           <div class="fact-row"><span class="fact-lbl">Experience</span><span class="fact-val">2+ years professional</span></div>
           <div class="fact-row"><span class="fact-lbl">Specialisation</span><span class="fact-val">Data Analytics · Backend Dev</span></div>
-          <div class="fact-row"><span class="fact-lbl">Tools</span><span class="fact-val">SQL · Power BI · Python · Laravel</span></div>
+          <div class="fact-row"><span class="fact-lbl">Tools</span><span class="fact-val">SQL · Power BI · Python · Snowflake · Laravel</span></div>
           <div class="fact-row"><span class="fact-lbl">Status</span><span class="fact-val green">Open to opportunities</span></div>
         </div>
       </div>
@@ -1309,6 +1366,7 @@
           <div class="skill-tags">
             <span class="skill-tag hi">Power BI</span>
             <span class="skill-tag hi">DAX</span>
+            <span class="skill-tag hi">Snowflake</span>
             <span class="skill-tag hi">MySQL</span>
             <span class="skill-tag">ETL Pipelines</span>
             <span class="skill-tag">Data Modeling</span>
@@ -1396,14 +1454,40 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
+ <section id="projects">
     <div class="section-inner">
       <div class="section-label">04 — All Projects</div>
       <div class="projects-grid">
 
-        <!-- Project 1 -->
         <div class="project-card">
           <div class="proj-num">01</div>
+          <h3 class="proj-title">New Zealand Consumers Price Index (CPI) Analytics</h3>
+          <div class="proj-par">
+            <div class="proj-par-item">
+              <span class="proj-par-label">Problem</span>
+              <span>Macroeconomic inflation data from Statistics New Zealand is often trapped in dense, multi-layered tables, making it difficult for businesses to track rapid quarterly price shifts.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Action</span>
+              <span>Engineered an automated data extraction and transformation pipeline using Python and Pandas to clean and restructure the dynamic "consumers-price-index-march-2026-quarter" datasets.</span>
+            </div>
+            <div class="proj-par-item">
+              <span class="proj-par-label">Result</span>
+              <span>Built an optimized data layer that isolates key inflation drivers across commodity groups, setting up clean, structured records ready for immediate business intelligence modeling.</span>
+            </div>
+          </div>
+          <div class="proj-tech">
+            <span>Python</span><span>Pandas</span><span>ETL Pipelines</span><span>Data Transformation</span><span>NZ CPI Data</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Priyanka212-pradhan/NZ-CPI-Analytics" target="_blank" class="proj-link">
+              View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="proj-num">02</div>
           <h3 class="proj-title">Time Series Sales Forecasting with Data Quality Management</h3>
           <div class="proj-par">
             <div class="proj-par-item">
@@ -1429,9 +1513,8 @@
           </div>
         </div>
 
-        <!-- Project 2 — SaaS Dashboard (teaser pointing to featured) -->
         <div class="project-card">
-          <div class="proj-num">02</div>
+          <div class="proj-num">03</div>
           <h3 class="proj-title">SaaS Revenue Retention &amp; Churn Analytics Dashboard</h3>
           <div class="proj-par">
             <div class="proj-par-item">
@@ -1461,9 +1544,8 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="project-card">
-          <div class="proj-num">03</div>
+          <div class="proj-num">04</div>
           <h3 class="proj-title">Payroll Management System</h3>
           <div class="proj-par">
             <div class="proj-par-item">
@@ -1489,9 +1571,8 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
         <div class="project-card">
-          <div class="proj-num">04</div>
+          <div class="proj-num">05</div>
           <h3 class="proj-title">Blog Platform with Role-Based Access Control</h3>
           <div class="proj-par">
             <div class="proj-par-item">
@@ -1521,7 +1602,6 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
   <section id="education" class="edu-section">
     <div class="section-inner">
       <div class="section-label">05 — Education &amp; Certifications</div>
@@ -1530,7 +1610,7 @@
           <div class="edu-type">Master's Degree</div>
           <h3 class="edu-degree">Master of Information Technology</h3>
           <p class="edu-school">Auckland Institute of Studies</p>
-          <p class="edu-year">2024 – May 2026</p>
+          <p class="edu-year">2024 – 2026 (Graduated)</p>
           <div class="edu-award">
             <i class="fa-solid fa-award"></i> Certificate of Academic Excellence
           </div>
@@ -1551,7 +1631,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <div class="section-inner">
       <div class="section-label">06 — Contact</div>
@@ -1559,12 +1638,12 @@
         <div>
           <h2 class="contact-heading">Let's work <em>together</em></h2>
           <p class="contact-sub">
-            I am actively seeking full-time Data Analyst or Software Engineer roles in Auckland,
-            available from <strong>May 2026</strong> on a Post-Study Work Visa.
-            Whether it's a data challenge that needs SQL architecture, a Power BI dashboard that needs
+            I am actively seeking full-time Data Analyst or Software Engineer roles in Auckland, 
+            available immediately on a Post-Study Work Visa. 
+            Whether it's a data challenge that needs SQL architecture, a Power BI dashboard that needs 
             business storytelling, or a backend system that needs building — I'd love to chat.
           </p>
-          <a href="Priyanka-Pradhan.pdf" download class="btn-primary">
+          <a href="Pradhan_Priyanka_Data_Analyst_CV.pdf" download class="btn-primary">
             <i class="fa-solid fa-download"></i> Download Resume
           </a>
         </div>
@@ -1614,7 +1693,7 @@
   <div id="cvModal" class="cv-modal">
     <div class="cv-modal-content">
       <span class="cv-close">&times;</span>
-      <iframe src="Priyanka-Pradhan.pdf" class="cv-frame"></iframe>
+      <iframe src="Pradhan_Priyanka_Data_Analyst_CV.pdf" class="cv-frame"></iframe>
     </div>
   </div>
 
@@ -1653,4 +1732,20 @@
         if (e.target === modal) modal.style.display = "none";
       });
     });
+
+    // Flagship Projects Slider Engine
+    let currentSlide = 0;
+    function moveSlider(direction) {
+      const track = document.getElementById('sliderTrack');
+      const totalSlides = 2; // We have exactly two featured items
+      
+      currentSlide += direction;
+      
+      // Infinite wrapping check
+      if (currentSlide >= totalSlides) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = totalSlides - 1;
+      
+      // Shift left by 0% or 50% depending on the active slide card
+      track.style.transform = `translateX(-${currentSlide * 50}%)`;
+    }
   </script>
